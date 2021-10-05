@@ -1,0 +1,95 @@
+openapi: 3.0.0
+info:
+  description: This API receives events from CPAP Therapy Devices
+  version: "1.0.0"
+  title: CPAP Reading API
+  contact:
+    email: you@your-company.com
+tags:
+  - name: device
+    description: Operations available to CPAP Device
+paths:
+  /information/therapy-hours:
+    post:
+      tags:
+        - device
+      summary: reports the accumulated therapy hours within a 24-hour period
+      operationId: app.report_therapy_hours
+      description: |
+        You are able to get reported therapy hours event and added to the system
+      responses:
+        '201':
+          description: therapy-hours item created
+        '400':
+          description: bad input parameter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TherapyHours'
+        description: therapy-hours item to add
+  /information/AHI-score:
+    post:
+      tags:
+        - device
+      summary: reports average apnea–hypopnea index (AHI) within a 24-hour period
+      operationId: app.report_AHI_score
+      description: |
+        You are able to get reported AHI score event and added to the system
+      responses:
+        '201':
+          description: item created
+        '400':
+          description: 'invalid input, object invalid'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AHI_Score'
+        description: AHI-score item to add
+components:
+  schemas:
+    TherapyHours:
+      required:
+        - patient_id
+        - device_id
+        - therapy_hours
+        - timestamp
+      properties:
+        patient_id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        device_id:
+          type: string
+          example: somEN4me
+        therapy_hours:
+          type: number
+          example: 2.6
+        timestamp:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+      type: object
+    AHI_Score:
+      required:
+        - patient_id
+        - device_id
+        - AHI_score
+        - timestamp
+      properties:
+        patient_id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        device_id:
+          type: string
+          example: somEN4me
+        AHI_score:
+          type: number  
+          example: 4.3
+        timestamp:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+      type: object
