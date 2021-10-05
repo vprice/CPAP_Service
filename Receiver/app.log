@@ -1,0 +1,23 @@
+2021-10-05 06:33:47,553 - basicLogger - INFO - Received event <therapy-hours> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:33:49,628 - basicLogger - INFO - Returned event <therapy-hours> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
+2021-10-05 06:33:56,574 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:35:08,876 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:36:57,612 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:49:37,190 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:50:01,629 - basicLogger - INFO - Received event <therapy-hours> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:50:03,677 - basicLogger - INFO - Returned event <therapy-hours> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
+2021-10-05 06:52:18,568 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:52:20,635 - basicLogger - INFO - Returned event <AHI-score> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
+2021-10-05 06:54:08,895 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:54:28,148 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:54:30,212 - basicLogger - INFO - Returned event <AHI-score> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
+2021-10-05 06:54:50,319 - basicLogger - INFO - Received event <therapy-hours> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 06:54:52,386 - basicLogger - INFO - Returned event <therapy-hours> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
+2021-10-05 07:17:40,319 - basicLogger - INFO - Received event <therapy-hours> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 07:17:42,384 - basicLogger - INFO - Returned event <therapy-hours> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
+2021-10-05 07:18:33,700 - basicLogger - INFO - Received event <therapy-hours> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 07:18:35,851 - basicLogger - INFO - Returned error: 500
+2021-10-05 07:26:20,694 - basicLogger - INFO - Received event <therapy-hours> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 07:26:22,764 - basicLogger - INFO - Returned event <therapy-hours> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
+2021-10-05 07:26:35,192 - basicLogger - INFO - Received event <AHI-score> request with a unique id of d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-05 07:26:37,263 - basicLogger - INFO - Returned event <AHI-score> response (Id: d290f1ee-6c54-4b01-90e6-d701748f0851) with status code 201
