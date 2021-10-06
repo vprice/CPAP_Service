@@ -1,16 +1,29 @@
 import connexion
 from connexion import NoContent
-import json
-import os
+import yaml
+import logging.config
+import logging
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from base import Base
 from therapy_hours import TherapyHours
 from AHI_score import AHI_Score
-import datetime
 
-DB_ENGINE = create_engine("sqlite:///information.db")
+with open('app_conf.yaml', 'r') as f:
+    app_config = yaml.safe_load(f.read())
+
+
+with open('log_conf.yaml', 'r') as f:
+    log_config = yaml.safe_load(f.read())
+    logging.config.dictConfig(log_config)
+    logger = logging.getLogger("basicLogger")
+
+config = app_config["datastore"]
+DB_ENGINE = create_engine(
+    'mysql+pymysql://'+ config["user"] + ':' + config["password"] + '@' + config["hostname"] +
+    ':' + str(config["port"]) + "/" + config["db"] 
+)
 Base.metadata.bind = DB_ENGINE
 DB_SESSION = sessionmaker(bind=DB_ENGINE)
 
@@ -30,6 +43,7 @@ def report_therapy_hours(body):
     
     session.commit()
     session.close()
+    logger.info("Stored event therapy-hours request with a unique id of: " + body["patient_id"])
     return NoContent, 201
 
 def report_AHI_score(body):
@@ -46,6 +60,7 @@ def report_AHI_score(body):
 
     session.commit()
     session.close()
+    logger.info("Stored event AHI-score request with a unique id of: " + body["patient_id"])
     return NoContent, 201
 
 app = connexion.FlaskApp(__name__, specification_dir='')
