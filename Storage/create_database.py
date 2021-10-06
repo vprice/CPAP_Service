@@ -1,27 +1,37 @@
-import sqlite3
+import mysql.connector
 
-connection = sqlite3.connect('information.db')
+try:
+    connection = mysql.connector.connect(
+        host="localhost",
+        port="3306",
+        user="root",
+        password=input("What password to connect with: "),
+        database="information")
+except:
+    print("Error: Could not connect to MySQL db.")
+    exit()
+
 cursor = connection.cursor()
-cursor.execute(' PRAGMA foreign_keys=ON; ')
+
 
 cursor.execute('''
           CREATE TABLE IF NOT EXISTS therapy_hours
-          (id INTEGER PRIMARY KEY ASC, 
-           patient_id VARCHAR(250) NOT NULL,
-           device_id VARCHAR(250) NOT NULL,
-           therapy_hours REAL NOT NULL,
-           timestamp VARCHAR(100) NOT NULL,
-           date_created VARCHAR(100) NOT NULL)
+          (id INT AUTO_INCREMENT PRIMARY KEY , 
+           patient_id VARCHAR(255),
+           device_id VARCHAR(255),
+           therapy_hours DOUBLE,
+           timestamp VARCHAR(100),
+           date_created VARCHAR(100))
           ''')
 
 cursor.execute('''
           CREATE TABLE IF NOT EXISTS AHI_score
-          (id INTEGER PRIMARY KEY ASC, 
-           patient_id VARCHAR(250) NOT NULL,
-           device_id VARCHAR(250) NOT NULL,
-           AHI_score REAL NOT NULL,
-           timestamp VARCHAR(100) NOT NULL,
-           date_created VARCHAR(100) NOT NULL)
+          (id INT AUTO_INCREMENT PRIMARY KEY , 
+           patient_id VARCHAR(250),
+           device_id VARCHAR(250),
+           AHI_score DOUBLE,
+           timestamp VARCHAR(100),
+           date_created VARCHAR(100))
           ''')
 connection.commit()
 connection.close()
