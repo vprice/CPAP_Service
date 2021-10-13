@@ -1,0 +1,16 @@
+openapi: 3.0.0
+info:
+  description: This API receives events from CPAP Therapy Devices
+  version: "1.0.0"
+  title: CPAP Reading API
+  contact:
+    email: you@your-company.com
+tags:
+  - name: device
+    description: Operations available to CPAP Device
+paths:
+  /stats:
+    get:
+      summary: Gets the event stats
+      operationId: app.get_stats
+    
