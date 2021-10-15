@@ -13,4 +13,44 @@ paths:
     get:
       summary: Gets the event stats
       operationId: app.get_stats
-    
+      description: Gets AHI score and therapy hours processed statistics
+      responses:
+        '200':
+          description: Successfully returned a list of therapy hour and AHI score events
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: '#/components/schemas/ReadingStats'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    ReadingStats:
+      required:
+      - num_therapy_hour_readings
+      - max_therapy_hour_reading
+      - num_AHI_score_readings
+      - max_AHI_score_reading
+      properties:
+        num_therapy_hour_readings:
+          type: integer
+          example: 50000
+        max_therapy_hour_reading:
+          type: number
+          example: 8.8
+        num_AHI_score_readings:
+          type: integer
+          example: 9999
+        max_AHI_score_reading:
+          type: number
+          example: 4.5
+      type: object

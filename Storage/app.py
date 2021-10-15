@@ -69,8 +69,8 @@ def get_therapy_hours(timestamp):
 
     session = DB_SESSION()
 
-    timestamp_datetime = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
-    readings = session.query(TherapyHours).filter(TherapyHours.date_created >= timestamp_datetime)
+    #timestamp_datetime = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+    readings = session.query(TherapyHours).filter(TherapyHours.date_created >= timestamp)
 
     results = []
     for reading in readings:
@@ -83,11 +83,12 @@ def get_therapy_hours(timestamp):
 
 def get_AHI_score(timestamp):
     """Gets new AHI score readings after the timestamp"""
-
+    
     session = DB_SESSION()
 
-    timestamp_datetime = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
-    readings = session.query(AHI_Score).filter(AHI_Score.date_created >= timestamp_datetime)
+    #timestamp_datetime = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+    
+    readings = session.query(AHI_Score).filter(AHI_Score.date_created >= timestamp)
 
     results = []
     for reading in readings:

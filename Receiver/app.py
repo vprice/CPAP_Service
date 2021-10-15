@@ -7,10 +7,6 @@ import requests
 
 #Functions goes here to handle endpoints
 
-"""
-Keep in mind that sqlite only like to handle a single thread not multiple threads at once. Therefore,
-commit/write current changes first before opening a new thread.
-"""
 with open('app_conf.yaml', 'r') as f:
     app_config = yaml.safe_load(f.read())
 

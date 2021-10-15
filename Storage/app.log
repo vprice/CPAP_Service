@@ -1,0 +1,9 @@
+2021-10-13 07:36:44,559 - basicLogger - INFO - Stored event AHI-score request with a unique id of: d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-13 07:36:51,744 - basicLogger - INFO - Stored event AHI-score request with a unique id of: d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-13 07:36:52,772 - basicLogger - INFO - Stored event AHI-score request with a unique id of: d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-13 07:37:08,861 - basicLogger - INFO - Stored event therapy-hours request with a unique id of: d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-13 07:37:09,892 - basicLogger - INFO - Stored event therapy-hours request with a unique id of: d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-13 07:37:10,475 - basicLogger - INFO - Stored event therapy-hours request with a unique id of: d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-13 07:37:12,050 - basicLogger - INFO - Stored event therapy-hours request with a unique id of: d290f1ee-6c54-4b01-90e6-d701748f0851
+2021-10-15 09:52:21,148 - basicLogger - INFO - Query for AHI score events after 2016-07-29T09:12:33.001Z returns 3 results
+2021-10-15 09:54:16,819 - basicLogger - INFO - Query for Therapy Hour events after 2016-07-29T09:12:33.001Z returns 4 results
