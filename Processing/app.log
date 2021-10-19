@@ -1,0 +1,35 @@
+2021-10-19 12:20:41,724 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:20:43,756 - basicLogger - INFO - Received therapy hour events:4
+2021-10-19 12:20:45,788 - basicLogger - INFO - Received therapy hour events:0
+2021-10-19 12:20:45,789 - basicLogger - DEBUG - {'max_AHI_score_reading': 4.3, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:20:46,729 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:20:48,771 - basicLogger - INFO - Received therapy hour events:4
+2021-10-19 12:20:50,809 - basicLogger - INFO - Received therapy hour events:0
+2021-10-19 12:20:50,809 - basicLogger - DEBUG - {'max_AHI_score_reading': 4.3, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:36:37,374 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:36:39,409 - basicLogger - INFO - Received therapy hour events:4
+2021-10-19 12:36:41,447 - basicLogger - INFO - Received therapy hour events:0
+2021-10-19 12:36:41,447 - basicLogger - DEBUG - {'max_AHI_score_reading': 0, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:36:42,370 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:36:44,400 - basicLogger - INFO - Received therapy hour events:4
+2021-10-19 12:36:46,451 - basicLogger - INFO - Received therapy hour events:0
+2021-10-19 12:36:46,451 - basicLogger - DEBUG - {'max_AHI_score_reading': 0, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:36:47,370 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:36:49,392 - basicLogger - INFO - Received therapy hour events:4
+2021-10-19 12:36:51,426 - basicLogger - INFO - Received therapy hour events:0
+2021-10-19 12:36:51,426 - basicLogger - DEBUG - {'max_AHI_score_reading': 0, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:36:52,368 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:36:54,400 - basicLogger - INFO - Received therapy hour events:4
+2021-10-19 12:36:56,449 - basicLogger - INFO - Received therapy hour events:0
+2021-10-19 12:36:56,450 - basicLogger - DEBUG - {'max_AHI_score_reading': 0, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:38:01,980 - basicLogger - DEBUG - Contents:{'max_AHI_score_reading': 0, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:38:01,980 - basicLogger - INFO - Request Complete
+2021-10-19 12:38:02,560 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:38:04,609 - basicLogger - INFO - Received therapy hour events:4
+2021-10-19 12:38:06,637 - basicLogger - INFO - Received therapy hour events:0
+2021-10-19 12:38:06,637 - basicLogger - DEBUG - {'max_AHI_score_reading': 0, 'max_therapy_hour_reading': 2.6, 'num_AHI_score_readings': 0, 'num_therapy_hour_readings': 4}
+2021-10-19 12:41:34,326 - basicLogger - INFO - Get_stats() request started...
+2021-10-19 12:41:34,327 - basicLogger - ERROR - ERROR: File does not exist
+2021-10-19 12:42:22,839 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:42:27,837 - basicLogger - INFO - Periodic Processing has started
+2021-10-19 12:46:23,253 - basicLogger - INFO - Periodic Processing has started

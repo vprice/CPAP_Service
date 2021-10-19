@@ -5,9 +5,6 @@ info:
   title: CPAP Reading API
   contact:
     email: you@your-company.com
-tags:
-  - name: device
-    description: Operations available to CPAP Device
 paths:
   /stats:
     get:
@@ -36,21 +33,21 @@ components:
   schemas:
     ReadingStats:
       required:
-      - num_therapy_hour_readings
-      - max_therapy_hour_reading
-      - num_AHI_score_readings
-      - max_AHI_score_reading
+        - max_AHI_score_reading
+        - max_therapy_hour_reading
+        - num_AHI_score_readings
+        - num_therapy_hour_readings
       properties:
-        num_therapy_hour_readings:
-          type: integer
-          example: 50000
+        max_AHI_score_reading:
+          type: number
+          example: 4.5
         max_therapy_hour_reading:
           type: number
           example: 8.8
         num_AHI_score_readings:
           type: integer
           example: 9999
-        max_AHI_score_reading:
-          type: number
-          example: 4.5
+        num_therapy_hour_readings:
+          type: integer
+          example: 50000
       type: object
