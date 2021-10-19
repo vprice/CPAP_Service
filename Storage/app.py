@@ -3,6 +3,7 @@ from connexion import NoContent
 import yaml
 import logging.config
 import logging
+import datetime
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -62,6 +63,40 @@ def report_AHI_score(body):
     session.close()
     logger.info("Stored event AHI-score request with a unique id of: " + body["patient_id"])
     return NoContent, 201
+
+def get_therapy_hours(timestamp):
+    """Gets new therapy hours readings after the timestamp"""
+
+    session = DB_SESSION()
+
+    #timestamp_datetime = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+    readings = session.query(TherapyHours).filter(TherapyHours.date_created >= timestamp)
+
+    results = []
+    for reading in readings:
+        results.append(reading.to_dict())
+    
+    session.close()
+
+    logger.info("Query for Therapy Hour events after %s returns %d results" %(timestamp, len(results)))
+    return results, 200
+
+def get_AHI_score(timestamp):
+    """Gets new AHI score readings after the timestamp"""
+    
+    session = DB_SESSION()
+    #timestamp_datetime = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+    
+    readings = session.query(AHI_Score).filter(AHI_Score.date_created >= timestamp)
+
+    results = []
+    for reading in readings:
+        results.append(reading.to_dict())
+    
+    session.close()
+
+    logger.info("Query for AHI score events after %s returns %d results" %(timestamp, len(results)))
+    return results, 200
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("none5561-CPAP-Readings-1.0.0-swagger.yaml",
