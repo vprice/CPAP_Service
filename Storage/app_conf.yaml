@@ -1,7 +1,12 @@
 version: 1
 datastore:
-  user: root
+  user: user
   password: password
-  hostname: localhost
+  hostname: cpap-lab6.eastus.cloudapp.azure.com
   port: 3306
   db: information
+
+events:
+  hostname: cpap-lab6.eastus.cloudapp.azure.com
+  port: 9092
+  topic: events

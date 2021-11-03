@@ -5,9 +5,6 @@ info:
   title: CPAP Reading API
   contact:
     email: you@your-company.com
-tags:
-  - name: device
-    description: Operations available to CPAP Device
 paths:
   /information/therapy-hours:
     
@@ -18,13 +15,12 @@ paths:
       operationId: app.get_therapy_hours
       description: Gets therapy hours readings added after a timestamp
       parameters:
-        - name: timestamp
+        - name: index
           in: query
-          description: Limits the number of items on a page
+          description: gets therapy hours at the index in information
           schema:
-            type: string
-            format: date-time
-            example: '2016-07-29T09:12:33.001Z'
+            type: integer
+            example: 100
       responses:
         '200':
           description: Successfully returned a list of therapy hours events
@@ -43,8 +39,16 @@ paths:
                 properties:
                   message: 
                     type: string
+         '404':
+          description: 'Not Found'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string           
   /information/AHI-score:
-    
     get:
       tags:
         - device
@@ -76,6 +80,15 @@ paths:
                 type: object
                 properties:
                   message: 
+                    type: string
+        '404':
+          description: 'Not Found'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
                     type: string
 components:
   schemas:

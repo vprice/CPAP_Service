@@ -4,6 +4,8 @@ import yaml
 import logging
 import logging.config
 import requests
+import datetime, json
+from pykafka import KafkaClient
 
 #Functions goes here to handle endpoints
 
@@ -19,32 +21,38 @@ def report_therapy_hours(body):
     """Receive therapy hours event"""
     logger.info("Received event <therapy-hours> request with a unique id of " + 
                 body["patient_id"])
-    headers = {"content-type": "application/json"}
-    response = requests.post(app_config["eventstore1"]["url"], json=body, headers=headers)
+    hostname = "%s:%d" % (app_config["events"]["hostname"], app_config["events"]["port"])
+    client = KafkaClient(hosts=hostname)
+    topic = client.topics[str.encode(app_config["events"]["topic"])]
+    producer = topic.get_sync_producer()
+    msg = { "type": "therapy-hours", 
+            "datetime":   
+                datetime.datetime.now().strftime(
+                    "%Y-%m-%dT%H:%M:%S"), 
+            "payload": body}
+    msg_str = json.dumps(msg)
+    producer.produce(msg_str.encode('utf-8'))
 
-    
-    if response.status_code == 201:
-        logger.info("Returned event <therapy-hours> response (Id: " + body["patient_id"] + ") with status code " + 
-                    str(response.status_code))
-    else:
-        logger.info("Returned error: " + str(response.status_code))
-    
-    return NoContent, 201
+    return logger.info(f"Returned information therapy hours response (id: {body['patient_id']}) with status 201")
 
 def report_AHI_score(body):
     """Receive AHI_score event"""
     logger.info("Received event <AHI-score> request with a unique id of " + 
                 body["patient_id"])
-    headers = {"content-type": "application/json"}
-    response = requests.post(app_config["eventstore2"]["url"], json=body, headers=headers)
-
-    if response.status_code == 201:
-        logger.info("Returned event <AHI-score> response (Id: " + body["patient_id"] + ") with status code " + 
-                    str(response.status_code))
-    else:
-        logger.info("Returned error: " + str(response.status_code))
     
-    return NoContent, 201
+    hostname = "%s:%d" % (app_config["events"]["hostname"], app_config["events"]["port"])
+    client = KafkaClient(hosts=hostname)
+    topic = client.topics[str.encode(app_config["events"]["topic"])]
+    producer = topic.get_sync_producer()
+    msg = { "type": "AHI-score", 
+            "datetime":   
+                datetime.datetime.now().strftime(
+                    "%Y-%m-%dT%H:%M:%S"), 
+            "payload": body}
+    msg_str = json.dumps(msg)
+    producer.produce(msg_str.encode('utf-8'))
+
+    return logger.info(f"Returned information AHI scoer response (id: {body['patient_id']}) with status 201")
 
 app = connexion.FlaskApp(__name__, specification_dir='')
 app.add_api("none5561-CPAP-Readings-1.0.0-swagger.yaml",

@@ -2,10 +2,10 @@ import mysql.connector
 
 try:
     connection = mysql.connector.connect(
-        host="localhost",
+        host="cpap-lab6.eastus.cloudapp.azure.com",
         port="3306",
-        user="root",
-        password=input("What password to connect with: "),
+        user="user",
+        password="password",
         database="information")
 except:
     print("Error: Could not connect to MySQL db.")

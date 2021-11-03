@@ -49,3 +49,7 @@
 2021-10-19 12:36:56,447 - basicLogger - INFO - Query for AHI score events after 2021-10-19T12:36:52Z returns 0 results
 2021-10-19 12:38:04,606 - basicLogger - INFO - Query for Therapy Hour events after 2016-07-29T09:12:33.001Z returns 4 results
 2021-10-19 12:38:06,634 - basicLogger - INFO - Query for AHI score events after 2021-10-19T12:38:02Z returns 0 results
+2021-10-31 16:59:48,700 - basicLogger - INFO - Connecting to DB. Hostname: ip-172-31-21-204, port: 3306
+2021-10-31 16:59:48,770 - basicLogger - INFO - Connecting to DB. Hostname: ip-172-31-21-204, port: 3306
+2021-10-31 17:00:53,487 - basicLogger - INFO - Connecting to DB. Hostname: ip-172-31-21-204, port: 3306
+2021-10-31 17:00:53,535 - basicLogger - INFO - Connecting to DB. Hostname: ip-172-31-21-204, port: 3306
